@@ -1,4 +1,7 @@
 class Person
+  attr_accessor :name, :age
+  attr_reader :id
+
   def self.counter
     @counter ||= 0
   end
@@ -9,9 +12,6 @@ class Person
     @name = name
     @parent_permission = parent_permission
   end
-
-  attr_accessor :name, :age
-  attr_reader :id
 
   private
 
