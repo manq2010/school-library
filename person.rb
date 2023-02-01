@@ -4,7 +4,7 @@ require './trimmer_decorator'
 
 class Person < Nameable
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rentals
 
   def self.counter
     @counter ||= 0
@@ -17,10 +17,15 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def can_use_services?
     of_age? || @parent_permission
+  end
+
+  def rent_book(rental)
+    @rentals << rental
   end
 
   def correct_name
