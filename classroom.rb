@@ -8,6 +8,6 @@ class Classroom
 
   def add_student(student)
     @students << student
-    student.belongs_to(self)
+    student.classroom = self
   end
 end
