@@ -15,7 +15,7 @@ class App
 
   def handle_student_input
     print 'Age: '
-    age = gets.chomp
+    age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
     print 'Has Parent permission? [Y/N]: '
@@ -28,7 +28,7 @@ class App
 
   def handle_teacher_input
     print 'Age: '
-    age = gets.chomp
+    age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
     print 'Specialization: '
@@ -70,27 +70,17 @@ class App
     end
   end
 
-  def self.counter_books
-    @counter_books ||= -1
-    @counter_books += 1
-  end
-
-  def self.counter_people
-    @counter_people ||= -1
-    @counter_people += 1
-  end
-
   def create_rental
     puts 'Select a book from the following list by number'
-    @books.each do |book|
-      puts "#{self.class.counter_books}) Title: #{book.title}, Author: #{book.author}"
+    @books.each_with_index do |book, index|
+      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
     book_number = gets.chomp.to_i
     book = @books[book_number]
 
     puts ['', 'Select a person from the following list by number (not id']
-    @people.each do |person|
-      puts "#{self.class.counter_people}) Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
+    @people.each_with_index do |person, index|
+      puts "#{index}) Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
     end
     person_number = gets.chomp.to_i
     person = @people[person_number]
@@ -103,13 +93,10 @@ class App
     puts 'Rental created successfully'
   end
 
-  def handle_list_rental
+  def list_rentals_for_person
     print 'ID of person: '
     person_id = gets.chomp.to_i
-    list_rentals_for_person(person_id)
-  end
 
-  def list_rentals_for_person(person_id)
     rentals_for_person = @rentals.select { |rental| rental.person.id == person_id }
 
     puts rentals_for_person.to_s
