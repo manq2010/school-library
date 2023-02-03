@@ -108,7 +108,7 @@ Install this project with:
 
 To run the project, execute the following command:
 
- `ruby main.rb`
+ `ruby main`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
