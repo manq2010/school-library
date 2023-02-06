@@ -15,7 +15,8 @@ class App
 
   def handle_student_input
     print 'Age: '
-    age = gets.chomp.to_i
+    # age = gets.chomp.to_i
+    age = validate_integer
     print 'Name: '
     name = gets.chomp.capitalize
     parent_permission = handle_permission
@@ -38,9 +39,19 @@ class App
     gets.chomp.capitalize
   end
 
+  def validate_integer
+    input = gets.chomp
+    if input =~ /\A\d{1,2}\z/ && input.to_i < 100
+      input.to_i
+    else
+      prints 'Invalid input. Please enter a non-negative integer less than 100: '
+      validate_integer
+    end
+  end
+
   def handle_teacher_input
     print 'Age: '
-    age = gets.chomp.to_i
+    age = validate_integer
     print 'Name: '
     name = gets.chomp.capitalize
     print 'Specialization: '
