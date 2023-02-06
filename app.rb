@@ -20,15 +20,6 @@ class App
     print 'Name: '
     name = gets.chomp.capitalize
     parent_permission = handle_permission
-    case parent_permission
-    when 'Y'
-      parent_permission = true
-    when 'N'
-      parent_permission = false
-    else
-      puts 'Invalid selection, please choose from Y or N'
-      parent_permission = handle_permission
-    end
     student = Student.new(age, name, parent_permission: parent_permission, person_type: 'student')
     @people << student
     puts ['Person created succsefully', ' ']
@@ -36,7 +27,17 @@ class App
 
   def handle_permission
     print 'Has Parent permission? [Y/N]: '
-    gets.chomp.capitalize
+    parent_permission = gets.chomp.capitalize
+
+    case parent_permission
+    when 'Y'
+      true
+    when 'N'
+      false
+    else
+      puts 'Invalid selection, please choose from Y or N'
+      handle_permission
+    end
   end
 
   def validate_integer
