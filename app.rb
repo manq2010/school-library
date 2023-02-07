@@ -45,7 +45,7 @@ class App
     if input =~ /\A\d{1,2}\z/ && input.to_i < 100
       input.to_i
     else
-      prints 'Invalid input. Please enter a non-negative integer less than 100: '
+      print 'Invalid input. Please enter a non-negative integer less than 100: '
       validate_integer
     end
   end
