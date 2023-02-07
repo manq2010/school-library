@@ -3,7 +3,6 @@ require './app'
 class Main
   def initialize
     @app = App.new
-    # @input = nil
   end
 
   def display_options
