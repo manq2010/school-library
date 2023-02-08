@@ -57,16 +57,44 @@ class RentalUserInterface
   end
 
   def handle_book_number
-    gets.chomp.to_i
+    value = gets.chomp
+
+    if (value.to_i < @books.books.size && value.to_i > -1) && value.match?(/\A[+-]?\d+\z/)
+      value.to_i
+    elsif @books.books.size == 1 && value.match?(/\A[+-]?\d+\z/)
+      puts 'Please enter 0'
+      handle_book_number
+    else
+      puts "Please enter a number from 0 to #{@books.books.size - 1}"
+      handle_book_number
+    end
   end
 
   def handle_person_number
-    gets.chomp.to_i
+    value = gets.chomp
+
+    if (value.to_i < @people.people.size && value.to_i > -1) && value.match?(/\A[+-]?\d+\z/)
+      value.to_i
+    elsif @people.people.size == 1 && value.match?(/\A[+-]?\d+\z/)
+      puts 'Please enter 0'
+      handle_book_number
+    else
+      puts "Please enter a number from 0 to #{@people.people.size - 1}"
+      handle_person_number
+    end
   end
 
   def handle_date_input
     print 'Date: '
-    gets.chomp
+    date = gets.chomp
+
+    date_regex = /\A\d{4}-\d{2}-\d{2}\z/
+    if date_regex.match?(date)
+      date
+    else
+      puts 'Invalid date format. Please enter the date in YYYY-MM-DD format.'
+      handle_date_input
+    end
   end
 
   def list_rentals_for_person
