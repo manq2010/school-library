@@ -1,4 +1,4 @@
-require './app'
+require_relative './user_interface/app'
 
 class Main
   def initialize
@@ -6,6 +6,12 @@ class Main
   end
 
   def display_options
+    puts '~~~~~~~~~~~~~~~~~~~~~~'
+    @app.book_count
+    @app.people_count
+    @app.rental_count
+    puts '~~~~~~~~~~~~~~~~~~~~~~'
+    puts ''
     puts 'Please choose an option by entering a number:'
     puts '1 - List all books'
     puts '2 - List all people'

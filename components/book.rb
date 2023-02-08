@@ -8,14 +8,12 @@ class Book
     @rentals = []
   end
 
-  # def rent_to(person)
-  #   rental = Rental.new(self, person)
+  # def add_rental(rental)
   #   @rentals << rental
-  #   rental
+  #   rentals.book = self
   # end
 
-  def add_rental(rental)
-    @rentals << rental
-    rentals.book = self
+  def to_json(*_args)
+    { 'title' => @title, 'author' => @author, 'rentals' => @rentals }
   end
 end
