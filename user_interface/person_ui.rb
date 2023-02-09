@@ -15,7 +15,9 @@ class PersonUserInterface
 
   def load
     if File.directory?('data') && File.file?(FILE_LOCATION)
-      JSON.parse(File.read(FILE_LOCATION))
+
+      File.zero?(FILE_LOCATION) ? [] : JSON.parse(File.read(FILE_LOCATION))
+
     elsif File.directory?('data') && !File.exist?(FILE_LOCATION)
       FileUtils.touch(FILE_LOCATION)
       []
