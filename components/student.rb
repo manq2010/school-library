@@ -18,6 +18,6 @@ class Student < Person
 
   def to_json(*_args)
     { 'id' => @id, 'name' => @name, 'age' => @age, 'parent_permission' => @parent_permission,
-      'class' => self.class.name, 'rentals' => @rentals }
+      'class' => self.class.name }
   end
 end

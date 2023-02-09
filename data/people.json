@@ -1,32 +1,9 @@
 [
   {
-    "id": 195,
-    "name": "Mancoba",
-    "age": 23,
+    "id": 337,
+    "name": "Mohamed",
+    "age": 19,
     "parent_permission": true,
-    "class": "Student",
-    "rentals": [
-
-    ]
-  },
-  {
-    "id": 868,
-    "name": "Meneer",
-    "age": 45,
-    "specialization": "Maths",
-    "class": "Teacher",
-    "rentals": [
-
-    ]
-  },
-  {
-    "id": 820,
-    "name": "Kay",
-    "age": 36,
-    "specialization": "It",
-    "class": "Teacher",
-    "rentals": [
-
-    ]
+    "class": "Student"
   }
 ]

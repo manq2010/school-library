@@ -8,11 +8,6 @@ class Book
     @rentals = []
   end
 
-  # def add_rental(rental)
-  #   @rentals << rental
-  #   rentals.book = self
-  # end
-
   def to_json(*_args)
     { 'title' => @title, 'author' => @author, 'rentals' => @rentals }
   end
