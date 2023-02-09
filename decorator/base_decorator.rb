@@ -1,4 +1,4 @@
-require './nameable'
+require_relative '../components/nameable'
 
 class BaseDecorator < Nameable
   def initialize(nameable)
