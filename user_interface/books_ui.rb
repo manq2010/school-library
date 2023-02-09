@@ -12,13 +12,9 @@ class BookUserInterface
 
   def load_books
     if File.directory?('data') && File.file?(FILE_LOCATION)
-      file = File.new(FILE_LOCATION, 'r')
 
-      if file.size.zero?
-        []
-      else
-        JSON.parse(File.read(FILE_LOCATION))
-      end
+      File.zero?(FILE_LOCATION) ? [] : JSON.parse(File.read(FILE_LOCATION))
+
     elsif File.directory?('data') && !File.exist?(FILE_LOCATION)
       FileUtils.touch(FILE_LOCATION)
       []
