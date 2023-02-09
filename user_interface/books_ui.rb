@@ -7,13 +7,18 @@ class BookUserInterface
   attr_accessor :books
 
   def initialize
-    # @books = []
     @books = load_books
   end
 
   def load_books
     if File.directory?('data') && File.file?(FILE_LOCATION)
-      File.nil? ? JSON.parse(File.read(FILE_LOCATION)) : []
+      file = File.new(FILE_LOCATION, 'r')
+
+      if file.size.zero?
+        []
+      else
+        JSON.parse(File.read(FILE_LOCATION))
+      end
     elsif File.directory?('data') && !File.exist?(FILE_LOCATION)
       FileUtils.touch(FILE_LOCATION)
       []
