@@ -48,9 +48,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 OOP school library <a name="about-project"></a>
+# 📖 TDD project <a name="about-project"></a>
 
-> In this project, the school library application is developed. It uses ruby as the main language.
+> In this project a class is implemented with some methods using test-driven development (TDD)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -67,7 +67,7 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Add Classes**
+- **Add more methods and tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,7 +96,7 @@ In order to run this project you need:
 ### Setup
 
 Clone this repository by using the command line : 
-- `git clone https://github.com/manq2010/school-library.git`
+- `git clone https://github.com/manq2010/ruby-tdd.git`
 
 ### Install
 
@@ -122,13 +122,19 @@ To run the project, execute the following command:
 - Twitter: [@mancoba_c](https://twitter.com/mancoba_c/)
 - LinkedIn: [mancobasihlongonyane](https://linkedin.com/in/mancobasihlongonyane/)
 
+👤 **Mohamed Khaled**
+
+- GitHub: [@z4cope](https://github.com/z4cope)
+- Twitter: [@mohamed](https://twitter.com/mohamed/)
+- LinkedIn: [mohamed-khaled-10138a1b7](https://www.linkedin.com/in/mohamed-khaled-10138a1b7/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add database**
+- [ ] **Add more classes and methods**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
